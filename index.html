@@ -1,57 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>欢迎来到我们的世界</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-            </ul>
-        </nav>
-        <h1>Welcome to Our Landing Page</h1>
-    </header>
-    <main>
-        <section id="home">
-            <div class="banner">
-                <h2>Discover Our Amazing Products</h2>
-                <p>Explore our wide range of products and services.</p>
+    <nav class="navbar">
+        <div class="logo">Brand</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#features">特点</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系我们</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>创新设计，卓越体验</h1>
+            <p>探索无限可能，打造完美解决方案</p>
+            <button class="cta-button">立即开始</button>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>我们的特色</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-rocket"></i>
+                <h3>快速部署</h3>
+                <p>简单快捷的部署流程，让您的想法立即呈现</p>
             </div>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>This is a simple landing page created using HTML, CSS, and JavaScript.</p>
-        </section>
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Product 1">
-                    <h3>Product 1</h3>
-                    <p>Description of Product 1.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Product 2">
-                    <h3>Product 2</h3>
-                    <p>Description of Product 2.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" alt="Product 3">
-                    <h3>Product 3</h3>
-                    <p>Description of Product 3.</p>
-                </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>安全可靠</h3>
+                <p>强大的安全保障，保护您的数据安全</p>
             </div>
-        </section>
-    </main>
+            <div class="feature-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>持续更新</h3>
+                <p>定期更新维护，持续优化用户体验</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>关于我们</h2>
+            <p>我们是一个充满激情的团队，致力于为客户提供最优质的服务和解决方案。通过持续创新和精益求精的态度，我们帮助客户实现业务增长和数字化转型。</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>联系我们</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="您的姓名">
+            <input type="email" placeholder="电子邮箱">
+            <textarea placeholder="请输入您的留言"></textarea>
+            <button class="submit-button">发送消息</button>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2023 Landing Page</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>邮箱：info@example.com</p>
+                <p>电话：+86 123 4567 8900</p>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 All Rights Reserved</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksA = document.querySelectorAll('.nav-links a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // 点击导航链接时关闭菜单
+        navLinksA.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
